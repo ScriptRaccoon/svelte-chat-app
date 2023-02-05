@@ -15,7 +15,7 @@ export type ServerToClientEvents = {
 };
 
 export type ClientToServerEvents = {
-	name: (n: string) => void;
+	login: (n: string) => void;
 	message: (m: message) => void;
 };
 

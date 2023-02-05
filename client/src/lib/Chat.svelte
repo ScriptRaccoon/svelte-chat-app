@@ -24,7 +24,7 @@
 		io();
 
 	onMount(() => {
-		socket.emit("name", name);
+		socket.emit("login", name);
 	});
 
 	socket.on("message", async (message) => {

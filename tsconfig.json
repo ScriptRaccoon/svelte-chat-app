@@ -1,9 +1,10 @@
 {
 	"compilerOptions": {
 		"esModuleInterop": false,
-		"target": "es6",
+		"target": "esnext",
 		"moduleResolution": "node",
-		"allowSyntheticDefaultImports": true
+		"allowSyntheticDefaultImports": true,
+		"removeComments": true
 	},
 	"include": ["server.ts"]
 }
