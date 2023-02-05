@@ -11,8 +11,8 @@
     "nodemon": "nodemon server.js",
     "dev": "concurrently \"npm:dev:client\" \"npm:dev:server\"",
     "build:client": "cd client && npm install && npm run build",
-    "build:server": "npm install && tsc",
-    "build": "npm run build:server && npm run build:client",
+    "build:server": "tsc",
+    "build": "npm install && npm run build:server && npm run build:client",
     "start": "node server.js"
   },
   "keywords": [],
