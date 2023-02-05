@@ -25,10 +25,6 @@ body {
 	height: 100vw;
 	display: grid;
 	grid-template-rows: auto auto 1fr auto;
-
-	@supports (height: 100dvh) {
-		height: 100dvh;
-	}
 }
 
 /* inputs and buttons reset */
