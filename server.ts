@@ -4,6 +4,7 @@ import type {
 	ServerToClientEvents,
 	InterServerEvents,
 	SocketData,
+	user,
 } from "./client/src/types";
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -14,6 +15,8 @@ const server = app.listen(PORT, () => {
 
 app.use(express.static("client/dist"));
 
+let users: user[] = [];
+
 import { Server } from "socket.io";
 const io = new Server<
 	ClientToServerEvents,
@@ -23,8 +26,30 @@ const io = new Server<
 >(server);
 
 io.on("connection", (socket) => {
-	socket.emit("message", `Welcome, ${socket.id}!`);
-	socket.on("message", (msg) => {
-		io.emit("message", msg);
+	socket.on("name", async (name) => {
+		socket.data.name = name;
+
+		io.emit("message", {
+			author: "",
+			text: `👋 ${name} has entered the chat`,
+			bot: true,
+		});
+
+		users.push({ id: socket.id, name: name });
+		io.emit("users", users);
+	});
+
+	socket.on("message", (message) => {
+		io.emit("message", { ...message, bot: false });
+	});
+
+	socket.on("disconnect", () => {
+		users = users.filter((user) => user.id != socket.id);
+		io.emit("users", users);
+		io.emit("message", {
+			author: "",
+			text: `🏃‍♀️ ${socket.data.name} has left the chat`,
+			bot: true,
+		});
 	});
 });
