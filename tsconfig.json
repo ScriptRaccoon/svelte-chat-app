@@ -1,0 +1,9 @@
+{
+	"compilerOptions": {
+		"esModuleInterop": false,
+		"target": "es6",
+		"moduleResolution": "node",
+		"allowSyntheticDefaultImports": true
+	},
+	"include": ["server.ts"]
+}
