@@ -24,7 +24,7 @@
 	</p>
 </aside>
 
-<style>
+<style lang="scss">
 	aside {
 		padding: 0.5rem;
 		color: var(--dark-font-color);
@@ -32,6 +32,11 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
+
+		@media (min-width: 420px) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
 	}
 
 	ul {
@@ -46,12 +51,5 @@
 		background-color: var(--bg-color-2);
 		padding: 0.2rem 0.4rem;
 		border-radius: 0.2rem;
-	}
-
-	@media (min-width: 420px) {
-		aside {
-			flex-direction: row;
-			justify-content: space-between;
-		}
 	}
 </style>

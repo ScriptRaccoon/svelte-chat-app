@@ -43,11 +43,11 @@ button {
 input[type="text"] {
 	border: 1px solid gray;
 	padding: 0.25rem;
-}
 
-input[type="text"]:focus-visible {
-	border: 1px solid white;
-	outline: none;
+	&:focus-visible {
+		border: 1px solid white;
+		outline: none;
+	}
 }
 
 /* buttons */
@@ -57,14 +57,14 @@ button {
 	background-color: var(--btn-color);
 	cursor: pointer;
 	white-space: nowrap;
-}
 
-button:hover {
-	filter: brightness(1.2);
-}
+	&:hover {
+		filter: brightness(1.2);
+	}
 
-button:focus-visible {
-	outline: 1px solid white;
+	&:focus-visible {
+		outline: 1px solid white;
+	}
 }
 
 /* links */

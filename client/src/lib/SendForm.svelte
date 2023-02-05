@@ -8,22 +8,20 @@
 	<button>Send message</button>
 </form>
 
-<style>
+<style lang="scss">
 	form {
 		padding: 1rem;
 		background-color: var(--bg-color-2);
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+
+		@media (min-width: 420px) {
+			flex-direction: row;
+		}
 	}
 
 	input {
 		flex-grow: 1;
-	}
-
-	@media (min-width: 420px) {
-		form {
-			flex-direction: row;
-		}
 	}
 </style>
