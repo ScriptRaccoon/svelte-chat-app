@@ -5,6 +5,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
+    "build+install": "cd client && npm install && npm run build",
     "build": "cd client && npm run build",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
