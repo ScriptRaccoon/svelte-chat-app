@@ -1,10 +1,10 @@
 <script lang="ts">
-	export let name: string;
+	import { name } from "@/stores";
 
 	let name_input = "";
 
 	function handle_login() {
-		name = name_input;
+		$name = name_input;
 	}
 </script>
 
