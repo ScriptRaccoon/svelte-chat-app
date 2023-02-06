@@ -16,7 +16,7 @@
 		flex-direction: column;
 		gap: 1rem;
 
-		@media (min-width: 420px) {
+		@media (min-width: 25rem) {
 			flex-direction: row;
 		}
 	}

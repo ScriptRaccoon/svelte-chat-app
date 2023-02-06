@@ -31,7 +31,7 @@
 		flex-direction: column;
 		gap: 0.5rem;
 
-		@media (min-width: 420px) {
+		@media (min-width: 25rem) {
 			flex-direction: row;
 			justify-content: space-between;
 		}
