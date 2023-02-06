@@ -27,7 +27,6 @@
 	aside {
 		padding: 0.5rem;
 		color: var(--dark-font-color);
-		font-size: smaller;
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
