@@ -1,26 +1,26 @@
-export type message = {
+type message = {
 	author: string;
 	text: string;
 	bot: boolean;
 };
 
-export type user = {
+type user = {
 	id: string;
 	name: string;
 };
 
-export type ServerToClientEvents = {
+type ServerToClientEvents = {
 	message: (m: message) => void;
 	users: (u: user[]) => void;
 };
 
-export type ClientToServerEvents = {
+type ClientToServerEvents = {
 	login: (n: string) => void;
 	message: (m: message) => void;
 };
 
-export type InterServerEvents = {};
+type InterServerEvents = {};
 
-export type SocketData = {
+type SocketData = {
 	name: string;
 };

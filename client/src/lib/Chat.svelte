@@ -5,13 +5,6 @@
 	import SendForm from "@/lib/SendForm.svelte";
 	import { tick, onMount } from "svelte";
 
-	import type {
-		message,
-		user,
-		ServerToClientEvents,
-		ClientToServerEvents,
-	} from "@/types";
-
 	export let name = "";
 
 	let messages: message[] = [];

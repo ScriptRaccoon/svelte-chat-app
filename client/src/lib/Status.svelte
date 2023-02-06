@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { fade } from "svelte/transition";
 	import { flip } from "svelte/animate";
-	import type { user } from "@/types";
 
 	export let users: user[] = [];
 	export let name = "";

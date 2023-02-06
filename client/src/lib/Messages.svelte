@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { message } from "@/types";
 	import Message from "@/lib/Message.svelte";
 	export let messages: message[] = [];
 	export let messages_element: HTMLElement;

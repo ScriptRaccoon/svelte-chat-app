@@ -1,12 +1,3 @@
-// import types
-import type {
-	ClientToServerEvents,
-	ServerToClientEvents,
-	InterServerEvents,
-	SocketData,
-	user,
-} from "./client/src/types";
-
 // setup express app
 import express from "express";
 const app = express();

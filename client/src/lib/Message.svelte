@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { message } from "@/types";
 	export let message: message;
 </script>
 

@@ -6,5 +6,5 @@
 		"allowSyntheticDefaultImports": true,
 		"removeComments": true
 	},
-	"include": ["server.ts"]
+	"include": ["server.ts", "./client/src/global.d.ts"]
 }
