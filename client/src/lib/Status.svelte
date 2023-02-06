@@ -25,13 +25,14 @@
 
 <style lang="scss">
 	aside {
-		padding: 0.5rem;
+		padding: 0.75rem;
 		color: var(--dark-font-color);
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
+		border-bottom: 0.1rem solid var(--separator-color);
 
-		@media (min-width: 25rem) {
+		@media (min-width: 30rem) {
 			flex-direction: row;
 			justify-content: space-between;
 		}
