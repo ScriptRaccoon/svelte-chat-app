@@ -15,7 +15,7 @@
 		type="text"
 		id="name_input"
 		bind:value={name_input}
-		required={true}
+		required
 	/>
 
 	<button>Start the chat</button>
