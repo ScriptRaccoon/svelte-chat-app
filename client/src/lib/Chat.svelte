@@ -4,6 +4,7 @@
 	import Messages from "@/lib/Messages.svelte";
 	import SendForm from "@/lib/SendForm.svelte";
 	import { tick, onMount } from "svelte";
+	import { scroll_to_bottom } from "@/utils";
 
 	export let name = "";
 
@@ -22,7 +23,8 @@
 
 	socket.on("message", async (message) => {
 		messages = [...messages, message];
-		scroll_to_bottom();
+		await tick();
+		scroll_to_bottom(messages_element);
 	});
 
 	socket.on("users", (_users) => {
@@ -36,14 +38,6 @@
 			bot: false,
 		});
 		my_message = "";
-	}
-
-	async function scroll_to_bottom() {
-		await tick();
-		if (messages_element) {
-			messages_element.scrollTop =
-				messages_element.scrollHeight;
-		}
 	}
 </script>
 

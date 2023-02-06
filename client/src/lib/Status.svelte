@@ -1,14 +1,11 @@
 <script lang="ts">
 	import { fade } from "svelte/transition";
 	import { flip } from "svelte/animate";
+	import { reload_page } from "@/utils";
 
 	export let users: user[] = [];
 
 	let show_users = true;
-
-	function reload() {
-		window.location.reload();
-	}
 
 	function toggle_users() {
 		show_users = !show_users;
@@ -33,7 +30,7 @@
 			Show users
 		{/if}
 	</button>
-	<button on:click={reload}>Logout</button>
+	<button on:click={reload_page}>Logout</button>
 </aside>
 
 <style lang="scss">
