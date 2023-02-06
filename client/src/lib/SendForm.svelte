@@ -9,6 +9,7 @@
 </form>
 
 <style lang="scss">
+	@use "../scss/breakpoints" as *;
 	form {
 		padding: 1rem;
 		background-color: var(--bg-color-2);
@@ -16,7 +17,7 @@
 		flex-direction: column;
 		gap: 1rem;
 
-		@media (min-width: 30rem) {
+		@media (min-width: $md) {
 			flex-direction: row;
 		}
 	}

@@ -24,6 +24,7 @@
 </aside>
 
 <style lang="scss">
+	@use "../scss/breakpoints" as *;
 	aside {
 		padding: 0.75rem;
 		color: var(--dark-font-color);
@@ -32,7 +33,7 @@
 		gap: 0.5rem;
 		border-bottom: 0.1rem solid var(--separator-color);
 
-		@media (min-width: 30rem) {
+		@media (min-width: $md) {
 			flex-direction: row;
 			justify-content: space-between;
 		}

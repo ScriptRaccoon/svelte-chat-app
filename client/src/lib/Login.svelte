@@ -22,13 +22,14 @@
 </form>
 
 <style lang="scss">
+	@use "../scss/breakpoints" as *;
 	form {
 		padding: 1rem;
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
 		align-items: center;
-		@media (min-width: 30rem) {
+		@media (min-width: $md) {
 			flex-direction: row;
 		}
 	}
