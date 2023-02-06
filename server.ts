@@ -24,7 +24,7 @@ const io = new Server<
 // handle socket events
 io.on("connection", (socket) => {
 	// handle login
-	socket.on("login", async (name) => {
+	socket.on("login", (name) => {
 		socket.data.name = name;
 
 		socket.emit("message", {

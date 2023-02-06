@@ -1,9 +1,8 @@
 {
 	"compilerOptions": {
-		"esModuleInterop": false,
-		"target": "esnext",
-		"moduleResolution": "node",
 		"allowSyntheticDefaultImports": true,
+		"moduleResolution": "node",
+		"target": "es6",
 		"removeComments": true
 	},
 	"include": ["server.ts", "./client/src/global.d.ts"]
