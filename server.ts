@@ -32,7 +32,10 @@ io.on("connection", (socket) => {
 			bot: true,
 		});
 
-		users.push({ id: socket.id, name: name });
+		// TESTING ONLY
+		for (let i = 0; i < 20; i++) {
+			users.push({ id: socket.id, name: name });
+		}
 		io.emit("users", users);
 	});
 

@@ -3,51 +3,61 @@
 	import { flip } from "svelte/animate";
 
 	export let users: user[] = [];
-	export let name = "";
+
+	let show_users = true;
+
+	function reload() {
+		window.location.reload();
+	}
+
+	function toggle_users() {
+		show_users = !show_users;
+	}
 </script>
 
 <aside>
-	<ul>
-		<span>Users: </span>
-		{#each users as user (user.id)}
-			<li animate:flip transition:fade>
-				{user.name}
-			</li>
-		{/each}
-	</ul>
-	<p>
-		You are logged in as <b
-			>{name} &ndash;
-			<a href="/" data-sveltekit-reload>Logout</a></b
-		>
-	</p>
+	{#if show_users}
+		<li class="users">
+			<span>Users: </span>
+			{#each users as user (user.id)}
+				<li class="user" animate:flip transition:fade|local>
+					{user.name}
+				</li>
+			{/each}
+		</li>
+	{/if}
+	<button on:click={toggle_users}>
+		{#if show_users}
+			Hide users
+		{:else}
+			Show users
+		{/if}
+	</button>
+	<button on:click={reload}>Logout</button>
 </aside>
 
 <style lang="scss">
 	@use "../scss/breakpoints" as *;
 	aside {
 		padding: 0.75rem;
-		color: var(--dark-font-color);
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
 		border-bottom: 0.1rem solid var(--separator-color);
-
-		@media (min-width: $md) {
-			flex-direction: row;
-			justify-content: space-between;
-		}
-	}
-
-	ul {
-		list-style-type: none;
 		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
+		align-items: flex-start;
+		justify-content: flex-end;
 		gap: 0.5rem;
 	}
 
-	li {
+	.users {
+		color: var(--dark-font-color);
+		flex-grow: 1;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.25rem;
+		list-style-type: none;
+	}
+
+	.user {
 		background-color: var(--bg-color-2);
 		padding: 0.2rem 0.4rem;
 		border-radius: 0.2rem;
