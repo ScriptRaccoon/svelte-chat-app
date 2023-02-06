@@ -53,10 +53,12 @@ io.on("connection", (socket) => {
 	socket.on("disconnect", () => {
 		users = users.filter((user) => user.id != socket.id);
 		io.emit("users", users);
-		io.emit("message", {
-			author: "",
-			text: `🏃‍♀️ ${socket.data.name} has left the chat`,
-			bot: true,
-		});
+		if (socket.data.name) {
+			io.emit("message", {
+				author: "",
+				text: `🏃‍♀️ ${socket.data.name} has left the chat`,
+				bot: true,
+			});
+		}
 	});
 });
