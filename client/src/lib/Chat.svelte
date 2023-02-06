@@ -47,6 +47,6 @@
 	}
 </script>
 
-<Status {users} {name} />
+<Status {users} />
 <Messages bind:messages bind:messages_element />
 <SendForm bind:my_message {send_message} />
