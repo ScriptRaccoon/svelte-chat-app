@@ -26,16 +26,20 @@ io.on("connection", (socket) => {
 	socket.on("login", async (name) => {
 		socket.data.name = name;
 
+		socket.emit("message", {
+			author: "",
+			text: `Welcome, ${name}!`,
+			bot: true,
+		});
+
 		io.emit("message", {
 			author: "",
 			text: `👋 ${name} has entered the chat`,
 			bot: true,
 		});
 
-		// TESTING ONLY
-		for (let i = 0; i < 20; i++) {
-			users.push({ id: socket.id, name: name });
-		}
+		users.push({ id: socket.id, name: name });
+
 		io.emit("users", users);
 	});
 
