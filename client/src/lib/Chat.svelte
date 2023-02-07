@@ -10,7 +10,7 @@
 
 	let messages: message[] = [];
 	let messages_element: HTMLElement;
-	let my_message = "";
+	let my_message_text = "";
 
 	const socket: Socket<
 		server_to_client_events,
@@ -36,10 +36,10 @@
 	function send_message() {
 		socket?.emit("message", {
 			user_name: $name,
-			text: my_message,
+			text: my_message_text,
 			bot: false,
 		});
-		my_message = "";
+		my_message_text = "";
 	}
 </script>
 
@@ -49,5 +49,5 @@
 	<Users />
 {:else}
 	<Messages bind:messages bind:messages_element />
-	<SendForm bind:my_message {send_message} />
+	<SendForm bind:my_message_text {send_message} />
 {/if}

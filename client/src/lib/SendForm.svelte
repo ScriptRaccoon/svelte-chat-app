@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let my_message = "";
+	export let my_message_text = "";
 	export let send_message = () => {};
 </script>
 
@@ -8,7 +8,7 @@
 		aria-label="message"
 		type="text"
 		required
-		bind:value={my_message}
+		bind:value={my_message_text}
 	/>
 	<button>Send message</button>
 </form>
