@@ -3,7 +3,7 @@
 </script>
 
 <li class:bot={message.bot}>
-	{#if !message.bot}
+	{#if "user_name" in message}
 		<span class="user">
 			{message.user_name}:
 		</span>

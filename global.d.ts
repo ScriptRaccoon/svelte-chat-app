@@ -1,8 +1,15 @@
-type message = {
+type user_message = {
 	user_name: string;
 	text: string;
-	bot: boolean;
+	bot: false;
 };
+
+type bot_message = {
+	text: string;
+	bot: true;
+};
+
+type message = user_message | bot_message;
 
 type user = {
 	id: string;
@@ -16,7 +23,7 @@ type server_to_client_events = {
 
 type client_to_server_events = {
 	login: (n: string) => void;
-	message: (m: message) => void;
+	message: (m: user_message) => void;
 };
 
 type inter_server_events = {};
