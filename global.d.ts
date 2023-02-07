@@ -1,5 +1,5 @@
 type message = {
-	author: string;
+	user_name: string;
 	text: string;
 	bot: boolean;
 };

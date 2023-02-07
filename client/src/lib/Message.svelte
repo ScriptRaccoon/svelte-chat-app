@@ -4,8 +4,8 @@
 
 <li class:bot={message.bot}>
 	{#if !message.bot}
-		<span class="author">
-			{message.author}:
+		<span class="user">
+			{message.user_name}:
 		</span>
 	{/if}
 	<span>{message.text}</span>
@@ -16,7 +16,7 @@
 		margin-bottom: 0.5rem;
 	}
 
-	.author {
+	.user {
 		color: var(--dark-font-color);
 	}
 

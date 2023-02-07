@@ -35,7 +35,7 @@
 
 	function send_message() {
 		socket?.emit("message", {
-			author: $name,
+			user_name: $name,
 			text: my_message,
 			bot: false,
 		});

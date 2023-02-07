@@ -28,13 +28,13 @@ io.on("connection", (socket) => {
 		socket.data.name = name;
 
 		socket.emit("message", {
-			author: "",
+			user_name: "",
 			text: `Welcome, ${name}!`,
 			bot: true,
 		});
 
 		io.emit("message", {
-			author: "",
+			user_name: "",
 			text: `👋 ${name} has entered the chat`,
 			bot: true,
 		});
@@ -55,7 +55,7 @@ io.on("connection", (socket) => {
 		io.emit("users", users);
 		if (socket.data.name) {
 			io.emit("message", {
-				author: "",
+				user_name: "",
 				text: `🏃‍♀️ ${socket.data.name} has left the chat`,
 				bot: true,
 			});
