@@ -15,10 +15,10 @@ let users: user[] = [];
 // setup socket.io
 import { Server } from "socket.io";
 const io = new Server<
-	ClientToServerEvents,
-	ServerToClientEvents,
-	InterServerEvents,
-	SocketData
+	client_to_server_events,
+	server_to_client_events,
+	inter_server_events,
+	socket_data
 >(server);
 
 // handle socket events

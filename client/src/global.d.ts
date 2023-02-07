@@ -9,18 +9,18 @@ type user = {
 	name: string;
 };
 
-type ServerToClientEvents = {
+type server_to_client_events = {
 	message: (m: message) => void;
 	users: (u: user[]) => void;
 };
 
-type ClientToServerEvents = {
+type client_to_server_events = {
 	login: (n: string) => void;
 	message: (m: message) => void;
 };
 
-type InterServerEvents = {};
+type inter_server_events = {};
 
-type SocketData = {
+type socket_data = {
 	name: string;
 };

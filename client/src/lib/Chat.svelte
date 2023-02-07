@@ -12,8 +12,10 @@
 	let messages_element: HTMLElement;
 	let my_message = "";
 
-	const socket: Socket<ServerToClientEvents, ClientToServerEvents> =
-		io();
+	const socket: Socket<
+		server_to_client_events,
+		client_to_server_events
+	> = io();
 
 	onMount(() => {
 		socket.emit("login", $name);
