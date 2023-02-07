@@ -4,7 +4,7 @@
 	import Messages from "@/lib/Messages.svelte";
 	import SendForm from "@/lib/SendForm.svelte";
 	import { tick, onMount } from "svelte";
-	import { scroll_to_bottom } from "@/utils";
+	import { reload_page, scroll_to_bottom } from "@/utils";
 	import { users, name, show_users } from "@/stores";
 	import Users from "./Users.svelte";
 
@@ -28,6 +28,8 @@
 	socket.on("users", (_users) => {
 		$users = _users;
 	});
+
+	socket.on("disconnect", reload_page);
 
 	function send_message() {
 		socket?.emit("message", {
