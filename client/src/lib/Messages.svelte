@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Message from "@/lib/Message.svelte";
-	import Users from "./Users.svelte";
 	export let messages: message[] = [];
 	export let messages_element: HTMLElement;
 </script>
@@ -11,7 +10,6 @@
 			<Message {message} />
 		{/each}
 	</ol>
-	<Users />
 </section>
 
 <style>
