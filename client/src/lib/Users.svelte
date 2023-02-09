@@ -5,7 +5,7 @@
 </script>
 
 {#if $show_users}
-	<section>
+	<section aria-label="users">
 		<h2>Users</h2>
 		<ul>
 			{#each $users as user (user.id)}

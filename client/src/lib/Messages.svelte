@@ -4,7 +4,7 @@
 	export let messages_element: HTMLElement;
 </script>
 
-<section bind:this={messages_element}>
+<section aria-label="messages" bind:this={messages_element}>
 	<ol>
 		{#each messages as message}
 			<Message {message} />
