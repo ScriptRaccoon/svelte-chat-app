@@ -11,7 +11,7 @@
 :root {
 	--bg-color-1: #113;
 	--bg-color-2: #225;
-	--btn-color: teal;
+	--btn-color: rgb(20, 94, 94);
 	--font-color: #eee;
 	--dark-font-color: #aaa;
 	--separator-color: #fff1;
@@ -46,7 +46,7 @@ input[type="text"] {
 	padding: 0.25rem;
 
 	&:focus-visible {
-		border: 1px solid white;
+		border-color: white;
 		outline: none;
 	}
 }
@@ -66,10 +66,4 @@ button {
 	&:focus-visible {
 		outline: 1px solid white;
 	}
-}
-
-/* links */
-
-a {
-	color: inherit;
 }
