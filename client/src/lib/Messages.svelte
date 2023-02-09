@@ -16,9 +16,7 @@
 	section {
 		padding: 0.5rem;
 		overflow-y: scroll;
-		overflow-x: hidden;
 		scroll-behavior: smooth;
-		position: relative;
 	}
 
 	ol {
