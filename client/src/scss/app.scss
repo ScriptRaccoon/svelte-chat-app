@@ -42,7 +42,7 @@ button {
 /* inputs */
 
 input[type="text"] {
-	border: 1px solid gray;
+	border: 0.1rem solid gray;
 	padding: 0.25rem;
 
 	&:focus-visible {
@@ -64,6 +64,6 @@ button {
 	}
 
 	&:focus-visible {
-		outline: 1px solid white;
+		outline: 0.1rem solid white;
 	}
 }

@@ -1,21 +1,19 @@
 <script lang="ts">
 	import { fade } from "svelte/transition";
 	import { flip } from "svelte/animate";
-	import { show_users, users } from "@/stores";
+	import { users } from "@/stores";
 </script>
 
-{#if $show_users}
-	<section aria-label="users">
-		<h2>Users</h2>
-		<ul>
-			{#each $users as user (user.id)}
-				<li animate:flip transition:fade|local>
-					{user.name}
-				</li>
-			{/each}
-		</ul>
-	</section>
-{/if}
+<section aria-label="users">
+	<h2>Users</h2>
+	<ul>
+		{#each $users as user (user.id)}
+			<li animate:flip transition:fade|local>
+				{user.name}
+			</li>
+		{/each}
+	</ul>
+</section>
 
 <style>
 	section {
